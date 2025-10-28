@@ -1,0 +1,35 @@
+:root {
+  /* Pitt palette */
+  --color-bg-start: #0a1630; /* deep navy tint */
+  --color-bg-end: #0f2247;   /* deeper navy */
+  --color-primary: #003594;  /* Pitt Blue */
+  --color-accent: #FFB81C;   /* Pitt Gold */
+  --color-text: #f1f5fb;     /* off-white */
+  --color-text-muted: #c4ccd8; /* brighter muted */
+
+  /* Primary shades for gradients/shadows */
+  --primary-500: #003594;
+  --primary-600: #002e7f;
+  --primary-700: #002766;
+  --primary-rgb: 0, 53, 148;
+
+  /* Surfaces */
+  --surface-01: rgba(255,255,255,0.06);
+  --surface-02: rgba(255,255,255,0.08);
+  --surface-03: rgba(255,255,255,0.12);
+  --border-01: rgba(255,255,255,0.10);
+  --border-02: rgba(255,255,255,0.16);
+
+  --radius: 20px;
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 10px 26px rgba(0, 0, 0, 0.28);
+  --overlay: linear-gradient(180deg, rgba(10, 22, 48, 0.18), rgba(15, 34, 71, 0.5));
+
+  --spacing-1: 8px;
+  --spacing-2: 12px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-8: 40px;
+}
