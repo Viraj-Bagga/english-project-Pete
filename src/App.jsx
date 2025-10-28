@@ -64,7 +64,7 @@ export default function App() {
     const sections = () => Array.from(document.querySelectorAll('.article__section'))
     const onScroll = () => {
       if (snappingRef.current) return
-      if (touchingRef.current) return
+      if (touchingRef.current) return // don't decide while finger is down
       clearTimeout(timer)
       timer = setTimeout(() => {
         const list = sections()
@@ -92,7 +92,7 @@ export default function App() {
 
   const handleExplore = () => {
     if (articleRef.current) {
-      smoothScrollTo(articleRef.current, { duration: 900 })
+      smoothScrollTo(articleRef.current, { duration: 700 })
     }
   }
 
