@@ -14,7 +14,7 @@
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
 /* Make HTML/BODY the snap container for reliable cross-browser snapping */
-html { scroll-snap-type: y mandatory; }
+html { scroll-snap-type: none; }
 body { overflow-x: hidden; overscroll-behavior-y: contain; }
 html { scroll-behavior: auto; /* we'll handle smooth scroll in JS for timing */ }
 body {
