@@ -83,9 +83,17 @@ export default function App() {
 
   const handleExplore = () => {
     const firstSection = document.querySelector('.article__section')
-    if (firstSection) {
-      smoothScrollTo(firstSection, { duration: 700 })
-    }
+    if (!firstSection) return
+    // Temporarily disable CSS snapping to avoid mid-animation snap
+    const root = document.documentElement
+    const prevInlineSnap = root.style.scrollSnapType
+    root.style.scrollSnapType = 'none'
+    snappingRef.current = true
+    smoothScrollTo(firstSection, { duration: 900 })
+    setTimeout(() => {
+      root.style.scrollSnapType = prevInlineSnap // restore inline (stylesheet still sets mandatory)
+      snappingRef.current = false
+    }, 950)
   }
 
   // Show a down-arrow at the bottom if more content exists below the viewport
