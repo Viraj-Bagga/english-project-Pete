@@ -48,7 +48,11 @@ export default function App() {
   // Enforce snap on scroll end (belt-and-suspenders)
   useEffect(() => {
     let timer = null
-    const sections = () => Array.from(document.querySelectorAll('.article__section'))
+    const sections = () => {
+      const hero = document.querySelector('.hero')
+      const paras = Array.from(document.querySelectorAll('.article__section'))
+      return [hero, ...paras].filter(Boolean)
+    }
     const onScroll = () => {
       if (snappingRef.current) return
       clearTimeout(timer)
@@ -78,8 +82,9 @@ export default function App() {
   }, [])
 
   const handleExplore = () => {
-    if (articleRef.current) {
-      smoothScrollTo(articleRef.current, { duration: 700 })
+    const firstSection = document.querySelector('.article__section')
+    if (firstSection) {
+      smoothScrollTo(firstSection, { duration: 700 })
     }
   }
 
